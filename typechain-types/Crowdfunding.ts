@@ -39,7 +39,6 @@ export interface CrowdfundingInterface extends Interface {
       | "goal"
       | "goalReached"
       | "image"
-      | "isDeadlinePassed"
       | "refundAll"
       | "refunded"
       | "title"
@@ -95,10 +94,6 @@ export interface CrowdfundingInterface extends Interface {
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "image", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "isDeadlinePassed",
-    values?: undefined
-  ): string;
   encodeFunctionData(functionFragment: "refundAll", values?: undefined): string;
   encodeFunctionData(functionFragment: "refunded", values?: undefined): string;
   encodeFunctionData(functionFragment: "title", values?: undefined): string;
@@ -148,10 +143,6 @@ export interface CrowdfundingInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "image", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "isDeadlinePassed",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "refundAll", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "refunded", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "title", data: BytesLike): Result;
@@ -286,8 +277,6 @@ export interface Crowdfunding extends BaseContract {
 
   image: TypedContractMethod<[], [string], "view">;
 
-  isDeadlinePassed: TypedContractMethod<[], [boolean], "view">;
-
   refundAll: TypedContractMethod<[], [void], "nonpayable">;
 
   refunded: TypedContractMethod<[], [boolean], "view">;
@@ -341,9 +330,6 @@ export interface Crowdfunding extends BaseContract {
   getFunction(
     nameOrSignature: "image"
   ): TypedContractMethod<[], [string], "view">;
-  getFunction(
-    nameOrSignature: "isDeadlinePassed"
-  ): TypedContractMethod<[], [boolean], "view">;
   getFunction(
     nameOrSignature: "refundAll"
   ): TypedContractMethod<[], [void], "nonpayable">;

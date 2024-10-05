@@ -5,9 +5,9 @@ import { useContract } from "./tasks/useContract";
 import { getContractInfos } from "./tasks/getContractInfos";
 import { askRefund } from "./tasks/askRefund";
 
-const privateKey = `0x${process.env.PRIVATE_KEY}`;
+//const privateKey = `0x${process.env.PRIVATE_KEY}`;
 
-console.log(`Private key: ${privateKey}`);
+//console.log(`Private key: ${privateKey}`);
 
 task("createContract", "Creates a new Crowdfunding contract")
   .addParam("goal", "The goal amount in wei")
@@ -35,10 +35,6 @@ task("askRefund", "Asks for a refund from an existing Crowdfunding contract")
 const config: HardhatUserConfig = {
   solidity: "0.8.27",
   networks: {
-    sepolia: {
-      url: `https://rpc2.sepolia.org`,    // Sepolia RPC URL
-      accounts: [privateKey] // Your MetaMask private key
-    }
   }
 };
 
