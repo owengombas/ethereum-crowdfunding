@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 // 21586
 pragma solidity ^0.8.27;
-import "hardhat/console.sol";
 
 contract Crowdfunding {
     address public creator;     // The project creator
@@ -9,8 +8,8 @@ contract Crowdfunding {
     uint public deadline;       // The time limit for reaching the goal
     uint public totalFunds;     // The total amount of funds raised
     bool public goalReached;    // Flag to track if the goal is reached
-    bool public refunded;      // Flag to track if refunds have been processed
-    string public title;         // title of the project
+    bool public refunded;       // Flag to track if refunds have been processed
+    string public title;        // title of the project
     string public description;  // Description of the project
     string public image;        // Image of the project
 

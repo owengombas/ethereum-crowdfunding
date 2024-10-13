@@ -26,7 +26,7 @@ export async function getContractInfos(args: UseContractArgs, hre: HardhatRuntim
     console.log("Finishes in:", (deadline - Math.floor(Date.now() / 1000)), "seconds");
     console.log("Title:", title);
     console.log("Description:", description);
-    console.log("Image:", image);
+    console.log("Image:", image || "<NO IMAGE>");
     console.log("Total funds:", totalFunds.toString());
     console.log("Is deadline reached:", isDeadlineReached);
 }

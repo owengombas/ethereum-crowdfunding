@@ -4,6 +4,7 @@ import { createContract } from "./tasks/createContract";
 import { useContract } from "./tasks/useContract";
 import { getContractInfos } from "./tasks/getContractInfos";
 import { askRefund } from "./tasks/askRefund";
+import { estimateGasPrice } from "./tasks/estimateGasPrice";
 
 //const privateKey = `0x${process.env.PRIVATE_KEY}`;
 
@@ -31,6 +32,9 @@ task("askRefund", "Asks for a refund from an existing Crowdfunding contract")
   .addParam("contractAddress", "The address of the contract")
   .addParam("accountNumber", "The account number to use for the refund")
   .setAction(askRefund);
+
+task("estimateGasPrice", "Estimates the gas cost of a transaction")
+  .setAction(estimateGasPrice);
 
 const config: HardhatUserConfig = {
   solidity: "0.8.27",
